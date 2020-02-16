@@ -333,6 +333,7 @@
             android:layout_centerHorizontal="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
+            android:paddingBottom="55dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout_search" />
 
@@ -341,11 +342,24 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filter"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="#383838"
         android:layout_gravity="bottom"
-        app:layout_scrollFlags="scroll|enterAlways"/>
+        android:animateLayoutChanges="true"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

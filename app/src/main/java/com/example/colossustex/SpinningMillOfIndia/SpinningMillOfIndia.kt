@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.example.colossustex.R
 import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.database.*
+import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
 
 class SpinningMillOfIndia : Fragment() {
 
@@ -82,6 +83,9 @@ class SpinningMillOfIndia : Fragment() {
                     if(manager.findFirstCompletelyVisibleItemPosition()==0 && newState == SCROLL_STATE_IDLE){
                         searchLayout.visibility = View.GONE
                         filterByName.text.clear()
+                        filter.visibility = View.GONE
+
+//                            .animate().alpha(0.0f);
                     }
 
                 }
@@ -95,6 +99,8 @@ class SpinningMillOfIndia : Fragment() {
 //                    states -  EXPANDED, COLLAPSED, IDLE
                     if (state == State.COLLAPSED) {
                         searchLayout.visibility = View.VISIBLE
+
+                        filter.visibility = View.VISIBLE
                     }
                 }
             }
