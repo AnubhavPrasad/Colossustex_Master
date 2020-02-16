@@ -339,15 +339,15 @@
 
     </RelativeLayout>
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="55dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        -->
-<!--        android:weightSum="3">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#383838"
+        android:layout_gravity="bottom"
+        app:layout_scrollFlags="scroll"/>
 
 
-<!--    </LinearLayout>-->
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
