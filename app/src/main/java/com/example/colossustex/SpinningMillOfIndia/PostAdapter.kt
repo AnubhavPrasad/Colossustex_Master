@@ -1,6 +1,5 @@
 package com.example.colossustex.SpinningMillOfIndia
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -11,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colossustex.R
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
@@ -42,9 +43,30 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, pos: Int) {
 
-        holder.date.text = posts[pos].date + ","
+        var postTime = posts[pos].date + " " + posts[pos].time + ":00"
+        val calender = Calendar.getInstance()
+        var format = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
+        val currentTime = format.format(calender.time)
+//        Log.i("date","curr:$currentTime post$postTime")
+
+        val datePost = format.parse(postTime)
+        val dateCurrent = format.parse(currentTime)
+
+//        Log.i("date","postTime:$postTime year:${date1.year} hour:${date1.hours} min:${date1.minutes} sec:${date1.seconds}")
+
+        if (dateCurrent.year == datePost.year && dateCurrent.month == datePost.month && dateCurrent.date == datePost.date) {
+            when {
+                datePost.hours != dateCurrent.hours -> holder.date.text =
+                    (dateCurrent.hours - datePost.hours).toString() + " hour ago,"
+                datePost.minutes != dateCurrent.minutes -> holder.date.text =
+                    (dateCurrent.minutes - datePost.minutes).toString() + " minute ago,"
+                else -> holder.date.text = "1 minute ago,"
+            }
+        } else {
+            holder.date.text = posts[pos].date + ","
+        }
         holder.time.text = posts[pos].time
-        holder.call.text = posts[pos].name.toString().slice(IntRange(0,11))+"..."
+        holder.call.text = posts[pos].name.toString().slice(IntRange(0, 11)) + "..."
 
 
 
@@ -70,12 +92,16 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
             dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.window!!.attributes.dimAmount = 0.9f
 
-            val call = dialog.findViewById<LinearLayout>(R.id.constraintLayout_call_spinning_mills_in_india)
-            val callText = dialog.findViewById<TextView>(R.id.textView_call_spinning_mills_in_india_dialog)
+            val call =
+                dialog.findViewById<LinearLayout>(R.id.constraintLayout_call_spinning_mills_in_india)
+            val callText =
+                dialog.findViewById<TextView>(R.id.textView_call_spinning_mills_in_india_dialog)
             callText.text = "Call the ${posts[pos].nameOnly}"
 
-            val mail = dialog.findViewById<LinearLayout>(R.id.constraintLayout_mail_spinning_mills_in_india)
-            val mailText = dialog.findViewById<TextView>(R.id.textView_mail_spinning_mills_in_india_dialog)
+            val mail =
+                dialog.findViewById<LinearLayout>(R.id.constraintLayout_mail_spinning_mills_in_india)
+            val mailText =
+                dialog.findViewById<TextView>(R.id.textView_mail_spinning_mills_in_india_dialog)
             mailText.text = "Email the ${posts[pos].nameOnly}"
 
             dialog.show()
