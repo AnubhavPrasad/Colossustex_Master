@@ -14,23 +14,19 @@
         android:layout_width="36dp"
         android:layout_height="42dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="4dp"
         android:padding="3dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView_description"
-        app:layout_constraintEnd_toStartOf="@+id/view3"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView_description"
+        app:layout_constraintTop_toTopOf="@+id/view3"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="1dp"
         android:layout_height="80dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:background="#C0C0C0"
         app:layout_constraintBottom_toBottomOf="@+id/textView_description"
-        app:layout_constraintEnd_toStartOf="@+id/textView_date"
         app:layout_constraintStart_toEndOf="@+id/imageView_status"
         app:layout_constraintTop_toTopOf="@+id/textView_description"
         app:layout_constraintVertical_bias="0.593" />
@@ -69,7 +65,7 @@
 
     <TextView
         android:id="@+id/textView_description"
-        android:layout_width="320dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
@@ -122,12 +118,10 @@
         android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_marginStart="24dp"
         android:background="@drawable/background_call_option_spinning_mills_in_india"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/linearLayout3"
         app:layout_constraintTop_toTopOf="@+id/linearLayout3">
 
