@@ -12,11 +12,17 @@
         tools:layout="@layout/home_page_fragment" >
         <action
             android:id="@+id/action_homePage_to_spinningMillOfIndia"
-            app:destination="@id/spinningMillOfIndia" />
+            app:destination="@id/spinningMillOfIndia"
+            app:enterAnim="@anim/enter_upwards" />
     </fragment>
     <fragment
         android:id="@+id/spinningMillOfIndia"
         android:name="com.example.colossustex.SpinningMillOfIndia.SpinningMillOfIndia"
         android:label="fragment_spinning_mill_of_india"
-        tools:layout="@layout/fragment_spinning_mill_of_india" />
+        tools:layout="@layout/fragment_spinning_mill_of_india" >
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_homePage"
+            app:destination="@id/homePage"
+            app:exitAnim="@anim/exit_downwards" />
+    </fragment>
 </navigation>

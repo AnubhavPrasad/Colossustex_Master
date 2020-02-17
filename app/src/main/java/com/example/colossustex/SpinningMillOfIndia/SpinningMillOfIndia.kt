@@ -37,7 +37,6 @@ class SpinningMillOfIndia : Fragment() {
         var lay = inflater.inflate(R.layout.fragment_spinning_mill_of_india, container, false)
         val toolbar =
             lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar_spinning_mills_in_india)
-        val upButton = lay.findViewById<ImageView>(R.id.upButtonSpinningMillsOfIndia)
         val cotton = lay.findViewById<TextView>(R.id.textView_cotton)
         val synthetic = lay.findViewById<TextView>(R.id.textView_Synthetic)
         val viscose = lay.findViewById<TextView>(R.id.textView_viscose)
@@ -52,11 +51,6 @@ class SpinningMillOfIndia : Fragment() {
         val appBarLayout = lay.findViewById<AppBarLayout>(R.id.app_bar_spinning_mills_in_india)
         val searchLayout = lay.findViewById<ConstraintLayout>(R.id.constraintLayout_search)
 
-        upButton.setOnClickListener {
-            it.findNavController().navigateUp()
-        }
-
-
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
@@ -65,6 +59,9 @@ class SpinningMillOfIndia : Fragment() {
                 }
             }
             true
+        }
+        toolbar.setNavigationOnClickListener {
+            it.findNavController().navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
         }
 
         posts = ArrayList()
