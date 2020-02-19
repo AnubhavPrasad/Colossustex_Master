@@ -53,6 +53,14 @@ class SpinningMillOfIndia : Fragment() {
         val appBarLayout = lay.findViewById<AppBarLayout>(R.id.app_bar_spinning_mills_in_india)
         val searchLayout = lay.findViewById<ConstraintLayout>(R.id.constraintLayout_search)
 
+        val searchAgentOption =
+            lay.findViewById<ConstraintLayout>(R.id.constraint_layout_direct_mill_agent_and_traders)
+
+        searchAgentOption.setOnClickListener {
+            it.findNavController()
+                .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToSearchAgent())
+        }
+
         toolbar.inflateMenu(R.menu.menu_spinning_mills_of_india)
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {

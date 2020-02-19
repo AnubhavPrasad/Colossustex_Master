@@ -25,5 +25,13 @@
             app:destination="@id/homePage"
             app:exitAnim="@anim/exit_downwards"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_spinningMillOfIndia_to_searchAgent"
+            app:destination="@id/searchAgent" />
     </fragment>
+    <fragment
+        android:id="@+id/searchAgent"
+        android:name="com.example.colossustex.SpinningMillOfIndia.SearchAgent"
+        android:label="fragment_search_agent"
+        tools:layout="@layout/fragment_search_agent" />
 </navigation>
