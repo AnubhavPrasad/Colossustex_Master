@@ -6,7 +6,9 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
@@ -55,13 +57,15 @@ class SpinningMillOfIndia : Fragment() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.home_page -> {
-                    toolbar.findNavController().navigateUp()
+                    toolbar.findNavController()
+                        .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
                 }
             }
             true
         }
         toolbar.setNavigationOnClickListener {
-            it.findNavController().navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
+            it.findNavController()
+                .navigate(SpinningMillOfIndiaDirections.actionSpinningMillOfIndiaToHomePage())
         }
 
         posts = ArrayList()
@@ -77,7 +81,7 @@ class SpinningMillOfIndia : Fragment() {
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                     super.onScrollStateChanged(recyclerView, newState)
 
-                    if(manager.findFirstCompletelyVisibleItemPosition()==0 && newState == SCROLL_STATE_IDLE){
+                    if (manager.findFirstCompletelyVisibleItemPosition() == 0 && newState == SCROLL_STATE_IDLE) {
                         searchLayout.visibility = View.GONE
                         filterByName.text.clear()
                         filter.visibility = View.GONE

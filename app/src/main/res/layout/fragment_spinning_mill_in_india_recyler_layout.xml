@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Date"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/textView_description"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,6 +48,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:text="Time"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/textView_date"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,6 +62,7 @@
         android:paddingStart="2dp"
         android:paddingEnd="2dp"
         android:text="Mill"
+        android:textSize="12sp"
         app:layout_constraintStart_toEndOf="@+id/textView_time"
         app:layout_constraintTop_toTopOf="parent" />
 
