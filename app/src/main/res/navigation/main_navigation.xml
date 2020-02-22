@@ -35,9 +35,6 @@
             android:id="@+id/action_spinningMillOfIndia_to_syntheticFragment"
             app:destination="@id/syntheticFragment" />
         <action
-            android:id="@+id/action_spinningMillOfIndia_to_viscoseFragment"
-            app:destination="@id/viscoseFragment" />
-        <action
             android:id="@+id/action_spinningMillOfIndia_to_texturisedFragment1"
             app:destination="@id/texturisedFragment1" />
     </fragment>
@@ -60,14 +57,6 @@
         android:label="SyntheticFragment" >
         <action
             android:id="@+id/action_syntheticFragment_to_homePage"
-            app:destination="@id/homePage" />
-    </fragment>
-    <fragment
-        android:id="@+id/viscoseFragment"
-        android:name="com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseFragment"
-        android:label="ViscoseFragment" >
-        <action
-            android:id="@+id/action_viscoseFragment_to_homePage"
             app:destination="@id/homePage" />
     </fragment>
     <fragment

@@ -1,5 +1,6 @@
 package com.example.colossustex.SpinningMillOfIndia
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -17,6 +18,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE
 import com.example.colossustex.R
+import com.example.colossustex.SpinningMillOfIndia.Fancy.FancyActivity
+import com.example.colossustex.SpinningMillOfIndia.Texturised.TexturisedActivity
+import com.example.colossustex.SpinningMillOfIndia.Viscose.ViscoseActivity
 import com.google.android.material.appbar.AppBarLayout
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_spinning_mill_of_india.*
@@ -40,10 +44,30 @@ class SpinningMillOfIndia : Fragment() {
         val toolbar =
             lay.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar_spinning_mills_in_india)
         val cotton = lay.findViewById<TextView>(R.id.textView_cotton)
+        cotton.setOnClickListener {
+            it.findNavController().navigate(R.id.action_spinningMillOfIndia_to_cottonFragment)
+        }
         val synthetic = lay.findViewById<TextView>(R.id.textView_Synthetic)
+        synthetic.setOnClickListener {
+            it.findNavController().navigate(R.id.action_spinningMillOfIndia_to_syntheticFragment)
+        }
         val viscose = lay.findViewById<TextView>(R.id.textView_viscose)
+        viscose.setOnClickListener {
+            startActivity(
+                Intent(
+                    context,
+                    ViscoseActivity::class.java
+                )
+            )
+        }
         val texturised = lay.findViewById<TextView>(R.id.textView_texturised)
+        texturised.setOnClickListener {
+            startActivity(Intent(context, TexturisedActivity::class.java))
+        }
         val fancy = lay.findViewById<TextView>(R.id.textView_fancy)
+        fancy.setOnClickListener {
+            startActivity(Intent(context, FancyActivity::class.java))
+        }
         val postYarnRequirement = lay.findViewById<CardView>(R.id.cardView_post_yarn_requirement)
         val directMillAgentsandTraders =
             lay.findViewById<CardView>(R.id.cardView_direct_mill_agent_and_traders)
